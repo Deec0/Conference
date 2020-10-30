@@ -1,1 +1,799 @@
-<!DOCTYPE html><html lang="en"><head>	<meta charset="UTF-8">	<meta name="viewport" content="width=device-width, initial-scale=1.0">	<meta name="format-detection" content="telephone=no">	<meta name="google" content="notranslate">	<link rel="stylesheet" href="css/style.min.css">	<!-- Favicon -->	<link rel="apple-touch-icon" sizes="180x180" href="img/Favicon/apple-touch-icon.png">	<link rel="icon" type="image/png" sizes="32x32" href="img/Favicon/favicon-32x32.png">	<link rel="icon" type="image/png" sizes="16x16" href="img/Favicon/favicon-16x16.png">	<link rel="manifest" href="img/Favicon/site.webmanifest">	<link rel="mask-icon" href="img/Favicon/safari-pinned-tab.svg" color="#5bbad5">	<meta name="msapplication-TileColor" content="#00aba9">	<meta name="theme-color" content="#ffffff">	<!-- Подключение jQuery -->	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>	<title>Conference</title></head><body>	<!-- Sprite -->	<svg style="display: none;">	<symbol id="twitter" viewBox="0 0 512 512">		<g>			<path d="M512,97.248c-19.04,8.352-39.328,13.888-60.48,16.576c21.76-12.992,38.368-33.408,46.176-58.016			c-20.288,12.096-42.688,20.64-66.56,25.408C411.872,60.704,384.416,48,354.464,48c-58.112,0-104.896,47.168-104.896,104.992			c0,8.32,0.704,16.32,2.432,23.936c-87.264-4.256-164.48-46.08-216.352-109.792c-9.056,15.712-14.368,33.696-14.368,53.056			c0,36.352,18.72,68.576,46.624,87.232c-16.864-0.32-33.408-5.216-47.424-12.928c0,0.32,0,0.736,0,1.152			c0,51.008,36.384,93.376,84.096,103.136c-8.544,2.336-17.856,3.456-27.52,3.456c-6.72,0-13.504-0.384-19.872-1.792			c13.6,41.568,52.192,72.128,98.08,73.12c-35.712,27.936-81.056,44.768-130.144,44.768c-8.608,0-16.864-0.384-25.12-1.44			C46.496,446.88,101.6,464,161.024,464c193.152,0,298.752-160,298.752-298.688c0-4.64-0.16-9.12-0.384-13.568			C480.224,136.96,497.728,118.496,512,97.248z"/>		</g>	</symbol>	<symbol id="twitterletter" viewBox="-157 -21 681 681.33182">		<g>			<path d="m327.5 510.214844c-11.882812 5.660156-34.597656 10.59375-51.53125 11.015625-51.140625 1.367187-61.066406-35.917969-61.476562-62.953125v-198.847656h128.273437v-96.714844h-127.832031v-162.714844s-92.046875 0-93.546875 0c-1.539063 0-4.222657 1.351562-4.605469 4.765625-5.472656 49.800781-28.777344 137.203125-125.679688 172.152344v82.507812h64.648438v208.695313c0 71.464844 52.707031 172.984375 191.859375 170.585937 46.949219-.804687 99.09375-20.453125 110.609375-37.417969zm0 0"/>		</g>	</symbol>	<symbol id="facebook" viewBox="0 0 24 24">		<g>			<path d="m15.997 3.985h2.191v-3.816c-.378-.052-1.678-.169-3.192-.169-3.159 0-5.323 1.987-5.323 5.639v3.361h-3.486v4.266h3.486v10.734h4.274v-10.733h3.345l.531-4.266h-3.877v-2.939c.001-1.233.333-2.077 2.051-2.077z"/>		</g>	</symbol>	<symbol id="mail" viewBox="0 0 512 512">		<g>			<g>				<polygon points="339.392,258.624 512,367.744 512,144.896 		"/>			</g>		</g>		<g>			<g>				<polygon points="0,144.896 0,367.744 172.608,258.624 		"/>			</g>		</g>		<g>			<g>				<path d="M480,80H32C16.032,80,3.36,91.904,0.96,107.232L256,275.264l255.04-168.032C508.64,91.904,495.968,80,480,80z"/>			</g>		</g>		<g>			<g>				<path d="M310.08,277.952l-45.28,29.824c-2.688,1.76-5.728,2.624-8.8,2.624c-3.072,0-6.112-0.864-8.8-2.624l-45.28-29.856					L1.024,404.992C3.488,420.192,16.096,432,32,432h448c15.904,0,28.512-11.808,30.976-27.008L310.08,277.952z"/>			</g>		</g>	</symbol>	</svg>	<div class="wrapper">		<main class="page">			<!-- Header -->			<header class="header" id="header">	<div class="container">		<div class="header__row">			<nav class="header__menu menu" id="menu">				<div class="menu__icon icon-menu" id="menuToggle">					<span></span>					<span></span>					<span></span>				</div>				<div class="menu__body menu__body_h">					<ul class="menu__list menu__list_h">						<li><a class="menu__link menu__link_h" href="#" target="_blank" data-scroll="#speakers">SPEAKERS</a></li>						<li><a class="menu__link menu__link_h" href="#" target="_blank" data-scroll="#agenda">AGENDA</a></li>						<li><a class="menu__link menu__link_h" href="#" target="_blank" data-scroll="#auditorium">AUDITORIUM</a></li>						<li><a class="menu__link menu__link_h" href="#" target="_blank" data-scroll="#benefactors">SPONSORS</a></li>					</ul>				</div>			</nav>		</div>	</div></header>			<div class="content">				<!-- Intro -->				<div class="intro" id="intro">					<div class="container">						<div class="intro__row">							<div class="intro__top">								<h1 class="intro__title">THE CONFERENCE</h1>								<h2 class="intro__subtitle">MILANO • MON 30 APRIL 2014 • SALA PASTORE</h2>							</div>							<div class="intro__text">								<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed 									ullamitso venenatis sapien a scelerisque. </p>							</div>							<div class="social">								<a href="#" class="social__item" target="_blank">									<svg class="social__icon">										<use xlink:href="#twitterletter"></use>									</svg>								</a>								<a href="#" class="social__item" target="_blank">									<svg class="social__icon">										<use xlink:href="#facebook"></use>									</svg>								</a>							</div> <!-- ./social -->							<a href="#" class="intro__btn btn">REGISTER NOW</a>						</div> <!-- ./intro__row -->					</div> <!-- ./container -->				</div> <!-- /section.intro -->				<!-- Speakers -->				<section class="speakers" id="speakers">					<div class="speakers__body">						<div class="speakers__top top">							<div class="top__body">								<div class="top__icon">									<picture><source srcset="img/Icons/01.webp" type="image/webp"><img src="img/Icons/01.png" alt=""></picture>								</div>								<h3 class="top__title title">SPEAKERS</h3>								<div class="top__text">									<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi ultricies condimentum tristique. Sed quis urna velit. Aliquam suscipit dapibus molestie. Nam auctor, risus et									varius dapibus, lorem leo dapibus nulla, id elementum tellus purus vitae augue.</p>								</div>							</div>						</div>						<div class="speakers__row">							<!-- ====1==== -->							<div class="speakers__item speakers__item_b">								<div class="speakers__column speakers__column_b">									<a class="speakers__speaker" href="#" target="_blank">										<span class="speakers__image ibg">											<picture><source srcset="img/Speakers/01.webp" type="image/webp"><img src="img/Speakers/01.jpg" alt=""></picture>										</span>									</a>								</div>								<div class="speakers__column speakers__column_b">									<div class="speakers__content block block_b">										<div class="block__body block__body_b">											<div class="block__row">												<div class="block__top">													<h4 class="block__title">														<a class="block__link title" href="#" target="_blank">															<p>																PETER LONGMAN															</p>														</a>													</h4>													<div class="block__text">														<p>															Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin quis consectetur nisi, ac placerat odio. Maecenas porta orci a lorem fermentum.														</p>													</div>												</div>												<div class="block__social social social_s">													<a href="#" class="social__item social__item_s" target="_blank">														<svg class="social__icon social__icon_s">															<use xlink:href="#twitter"></use>														</svg>													</a>												</div>											</div>										</div>									</div>								</div>							</div> <!-- ./speakers__item -->							<!-- ====2==== -->							<div class="speakers__item">								<div class="speakers__column">									<a class="speakers__speaker" href="#" target="_blank">										<span class="speakers__image ibg">											<picture><source srcset="img/Speakers/02.webp" type="image/webp"><img src="img/Speakers/02.jpg" alt=""></picture>										</span>									</a>								</div>								<div class="speakers__column">									<div class="speakers__content block">										<div class="block__body">											<div class="block__row">												<div class="block__top">													<h4 class="block__title">														<a class="block__link title" href="#" target="_blank">															<p>																JOAN MARTINEZ															</p>														</a>													</h4>													<div class="block__text">														<p>															Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque vitae metus ligula. Ut vitae vestibulum enim. 														</p>													</div>												</div>												<div class="block__social social social_s">													<a href="#" class="social__item social__item_s" target="_blank">														<svg class="social__icon social__icon_s">															<use xlink:href="#twitter"></use>														</svg>													</a>												</div>											</div>										</div>									</div>								</div>							</div> <!-- ./speakers__item -->							<!-- ====3==== -->							<div class="speakers__item">								<div class="speakers__column">									<a class="speakers__speaker" href="#" target="_blank">										<span class="speakers__image ibg">											<picture><source srcset="img/Speakers/03.webp" type="image/webp"><img src="img/Speakers/03.jpg" alt=""></picture>										</span>									</a>								</div>								<div class="speakers__column">									<div class="speakers__content block">										<div class="block__body">											<div class="block__row">												<div class="block__top">													<h4 class="block__title">														<a class="block__link title" href="#" target="_blank">															<p>																MICHAEL DOE															</p>														</a>													</h4>													<div class="block__text">														<p>															Aenean pharetra adipiscing sem non ornare. Duis at dui turpis. Quisque in accumsan odio. 														</p>																											</div>												</div>												<div class="block__social social social_s">													<a href="#" class="social__item social__item_s" target="_blank">														<svg class="social__icon social__icon_s">															<use xlink:href="#twitter"></use>														</svg>													</a>												</div>											</div>										</div>									</div>								</div>							</div> <!-- ./speakers__item -->							<!-- ====4==== -->							<div class="speakers__item">								<div class="speakers__column">									<a class="speakers__speaker" href="#" target="_blank">										<span class="speakers__image ibg">											<picture><source srcset="img/Speakers/04.webp" type="image/webp"><img src="img/Speakers/04.jpg" alt=""></picture>										</span>									</a>								</div>								<div class="speakers__column">									<div class="speakers__content block">										<div class="block__body">											<div class="block__row">												<div class="block__top">													<h4 class="block__title">														<a class="block__link title" href="#" target="_blank">															<p>																SAUL GOODMAN															</p>														</a>													</h4>													<div class="block__text">														<p>															Phasellus rutrum est interdum tincidunt commodo. Donec vel dignissim orci. 														</p>													</div>												</div>												<div class="block__social social social_s">													<a href="#" class="social__item social__item_s" target="_blank">														<svg class="social__icon social__icon_s">															<use xlink:href="#twitter"></use>														</svg>													</a>												</div>											</div>										</div>									</div>								</div>							</div> <!-- ./speakers__item -->							<!-- ====5==== -->							<div class="speakers__item">								<div class="speakers__column">									<a class="speakers__speaker" href="#" target="_blank">										<span class="speakers__image ibg">											<picture><source srcset="img/Speakers/05.webp" type="image/webp"><img src="img/Speakers/05.jpg" alt=""></picture>										</span>									</a>								</div>								<div class="speakers__column">									<div class="speakers__content block">										<div class="block__body">											<div class="block__row">												<div class="block__top">													<h4 class="block__title">														<a class="block__link title" href="#" target="_blank">															<p>																HUGH LAURENCE															</p>														</a>													</h4>													<div class="block__text">														<p>															Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent ac magna mauris Interdum et malesuada fames ac ante.														</p>													</div>												</div>												<div class="block__social social social_s">													<a href="#" class="social__item social__item_s" target="_blank">														<svg class="social__icon social__icon_s">															<use xlink:href="#twitter"></use>														</svg>													</a>												</div>											</div>										</div>									</div>								</div>							</div> <!-- ./speakers__item -->						</div> <!-- ./speakers__row -->					</div> <!-- ./speakers__body -->				</section> <!-- /section.speakers -->				<!-- Agenda -->				<section class="agenda" id="agenda">					<div class="container">						<div class="agenda__top">							<div class="agenda__logo">								<picture><source srcset="img/Icons/02.webp" type="image/webp"><img src="img/Icons/02.png" alt=""></picture>							</div>							<h3 class="agenda__title title">								AGENDA							</h3>							<div class="agenda__subtitle subtitle">								Conference Schedule							</div>							<div class="agenda__label">								MILANO • MON 30 APRIL 2014 SALA PASTORE							</div>						</div>						<div class="agenda__row">							<ul class="agenda__list one">								<!-- ====1==== -->								<li class="agenda__item">									<div class="agenda__column">										<div class="agenda__time">											<time>8:00 AM</time>										</div>									</div>									<div class="agenda__column">										<div class="agenda__btn btn">Check In</div>										<div class="event">											<div class="event__top">												<div class="event__icon">													<picture><source srcset="img/Icons/03.webp" type="image/webp"><img src="img/Icons/03.png" alt=""></picture>												</div>												<h4 class="event__title">Check In</h4>											</div>											<div class="event__text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent ac magna mauris. Interdum et malesuada fames ac ante ipsum primis in faucibus. </div>										</div>									</div>								</li>								<!-- ====2==== -->								<li class="agenda__item">									<div class="agenda__column">										<div class="agenda__time">											<time>8:30 AM</time>										</div>									</div>									<div class="agenda__column">										<div class="agenda__btn btn">Breakfast / Coffee</div>										<div class="event">											<div class="event__top">												<div class="event__icon">													<picture><source srcset="img/Icons/03.webp" type="image/webp"><img src="img/Icons/03.png" alt=""></picture>												</div>												<h4 class="event__title">Breakfast / Coffee</h4>											</div>											<div class="event__text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent ac magna mauris. Interdum et malesuada fames ac ante ipsum primis in faucibus. </div>										</div>									</div>								</li>								<!-- ====3==== -->								<li class="agenda__item">									<div class="agenda__column">										<div class="agenda__time">											<time>9:00AM - 12:00 AM</time>										</div>									</div>									<div class="agenda__column">										<div class="agenda__btn btn">Pre-Conference Trainings</div>										<div class="event">											<div class="event__top">												<div class="event__icon">													<picture><source srcset="img/Icons/03.webp" type="image/webp"><img src="img/Icons/03.png" alt=""></picture>												</div>												<h4 class="event__title">Pre-Conference Trainings</h4>											</div>											<div class="event__text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent ac magna mauris. Interdum et malesuada fames ac ante ipsum primis in faucibus. </div>										</div>									</div>								</li>								<!-- ====4==== -->								<li class="agenda__item">									<div class="agenda__column">										<div class="agenda__time">											<time>12:30 PM - 1:30 PM</time>										</div>									</div>									<div class="agenda__column">										<div class="agenda__btn btn">Lunch</div>										<div class="event">											<div class="event__top">												<div class="event__icon">													<picture><source srcset="img/Icons/03.webp" type="image/webp"><img src="img/Icons/03.png" alt=""></picture>												</div>												<h4 class="event__title">Lunch</h4>											</div>											<div class="event__text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent ac magna mauris. Interdum et malesuada fames ac ante ipsum primis in faucibus. </div>										</div>									</div>								</li>								<!-- ====5==== -->								<li class="agenda__item">									<div class="agenda__column">										<div class="agenda__time">											<time>1:30 PM - 5:30 PM</time>										</div>									</div>									<div class="agenda__column">										<div class="agenda__btn btn">Pre-Conference Trainings</div>										<div class="event">											<div class="event__top">												<div class="event__icon">													<picture><source srcset="img/Icons/03.webp" type="image/webp"><img src="img/Icons/03.png" alt=""></picture>												</div>												<h4 class="event__title">Pre-Conference Trainings</h4>											</div>											<div class="event__text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent ac magna mauris. Interdum et malesuada fames ac ante ipsum primis in faucibus. </div>										</div>									</div>								</li>								<!-- ====6==== -->								<li class="agenda__item">									<div class="agenda__column">										<div class="agenda__time">											<time>5:00 PM</time>										</div>									</div>									<div class="agenda__column">										<div class="agenda__btn btn">City tour & Activities</div>										<div class="event">											<div class="event__top">												<div class="event__icon">													<picture><source srcset="img/Icons/03.webp" type="image/webp"><img src="img/Icons/03.png" alt=""></picture>												</div>												<h4 class="event__title">City tour & Activities</h4>											</div>											<div class="event__text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent ac magna mauris. Interdum et malesuada fames ac ante ipsum primis in faucibus. </div>										</div>									</div>								</li>																<!-- ====7==== -->								<li class="agenda__item">									<div class="agenda__column">										<div class="agenda__time">											<time>6:00 PM - 9:00 PM</time>										</div>									</div>									<div class="agenda__column">										<div class="agenda__btn btn">The Conference talks</div>										<div class="event">											<div class="event__top">												<div class="event__icon">													<picture><source srcset="img/Icons/03.webp" type="image/webp"><img src="img/Icons/03.png" alt=""></picture>												</div>												<h4 class="event__title">The Conference talks</h4>											</div>											<div class="event__text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent ac magna mauris. Interdum et malesuada fames ac ante ipsum primis in faucibus. </div>										</div>									</div>								</li>								<!-- ====8==== -->								<li class="agenda__item">									<div class="agenda__column">										<div class="agenda__time">											<time>9:00 PM</time>										</div>									</div>									<div class="agenda__column">										<div class="agenda__btn btn">Welcome Dinner</div>										<div class="event">											<div class="event__top">												<div class="event__icon">													<picture><source srcset="img/Icons/03.webp" type="image/webp"><img src="img/Icons/03.png" alt=""></picture>												</div>												<h4 class="event__title">Welcome Dinner</h4>											</div>											<div class="event__text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent ac magna mauris. Interdum et malesuada fames ac ante ipsum primis in faucibus. </div>										</div>									</div>								</li>																<!-- ====9==== -->								<li class="agenda__item">									<div class="agenda__column">										<div class="agenda__time">											<time>7:30 PM - 9:00 PM</time>										</div>									</div>									<div class="agenda__column">										<div class="agenda__btn btn">Sponsors Reception</div>										<div class="event">											<div class="event__top">												<div class="event__icon">													<picture><source srcset="img/Icons/03.webp" type="image/webp"><img src="img/Icons/03.png" alt=""></picture>												</div>												<h4 class="event__title">Sponsors Reception</h4>											</div>											<div class="event__text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent ac magna mauris. Interdum et malesuada fames ac ante ipsum primis in faucibus. </div>										</div>									</div>								</li>							</ul> <!-- /ul.agenda__list -->						</div> <!-- ./agenda__row -->					</div> <!-- ./container -->				</section> <!-- /section.agenda -->				<!-- Auditorium -->				<section class="auditorium" id="auditorium">					<div class="container">						<div class="auditorium__body">							<div class="auditorium__item item">								<div class="item__top">									<div class="item__logo">										<picture><source srcset="img/Icons/04.webp" type="image/webp"><img src="img/Icons/04.png" alt=""></picture>									</div>									<div class="item__title title">										AUDITORIUM									</div>									<div class="item__subtitle subtitle">										The Location									</div>								</div>								<div class="item__text text">									<div class="text__address">										<p>Corso Magenta, 52</p> 										<p>20123 Milano</p>									</div>									<div class="text__number">										<a href="#" target="_blank">Tel. +39 02 92881877</a>										<a href="#" target="_blank">Mob. +39 373 8126235</a>									</div>									<div class="text__mail">										<p>E-Mail :</p>										<a href="mailto:info@salapastore.it" target="_blank">											info@salapastore.it										</a>									</div>								</div>							</div> <!-- ./auditorium__item -->						</div> <!-- ./auditorium__body -->					</div> <!-- ./container -->				</section> <!-- /section.auditorium -->				<!-- Benefactors -->				<section class="benefactors" id="benefactors">					<div class="benefactors__body">						<div class="benefactors__top">							<div class="benefactors__logo">								<picture><source srcset="img/Icons/05.webp" type="image/webp"><img src="img/Icons/05.png" alt=""></picture>							</div>							<h3 class="benefactors__title title">								SPONSORS							</h3>							<div class="benefactors__subtitle subtitle">								The Conference Partners							</div>						</div>						<div class="benefactors__row">							<div class="benefactors__company">								<a class="benefactors__image" href="#" target="_blank">									<picture><source srcset="img/Sponsors/01.webp" type="image/webp"><img src="img/Sponsors/01.png" alt=""></picture>								</a>							</div>							<div class="benefactors__company">								<a class="benefactors__image" href="#" target="_blank">									<picture><source srcset="img/Sponsors/02.webp" type="image/webp"><img src="img/Sponsors/02.png" alt=""></picture>								</a>							</div>							<div class="benefactors__company">								<a class="benefactors__image" href="#" target="_blank">									<picture><source srcset="img/Sponsors/03.webp" type="image/webp"><img src="img/Sponsors/03.png" alt=""></picture>								</a>							</div>							<div class="benefactors__company">								<a class="benefactors__image" href="#" target="_blank">									<picture><source srcset="img/Sponsors/04.webp" type="image/webp"><img src="img/Sponsors/04.png" alt=""></picture>								</a>							</div>							<div class="benefactors__company">								<a class="benefactors__image" href="#" target="_blank">									<picture><source srcset="img/Sponsors/05.webp" type="image/webp"><img src="img/Sponsors/05.png" alt=""></picture>								</a>							</div>							<div class="benefactors__company">								<a class="benefactors__image" href="#" target="_blank">									<picture><source srcset="img/Sponsors/06.webp" type="image/webp"><img src="img/Sponsors/06.png" alt=""></picture>								</a>							</div>						</div> <!-- ./benefactors__row -->						<div class="benefactors__bottom">							<a href="#" class="benefactors__btn btn">BECOME A SPONSOR</a>						</div>					</div> <!-- ./benefactors__body -->				</section> <!-- /section.benefactors -->				<!-- Footer -->				<footer class="footer" id="footer">	<div class="footer__body">		<h2 class="footer__title">			THE CONFERENCE		</h2>		<nav class="footer__menu menu" id="menu">				<div class="menu__body menu__body_f">					<div class="menu__list menu__list_f">						<li><a class="menu__link menu__link_f" href="#" target="_blank" data-scroll="#speakers">SPEAKERS</a></li>						<li><a class="menu__link menu__link_f" href="#" target="_blank" data-scroll="#agenda">AGENDA</a></li>						<li><a class="menu__link menu__link_f" href="#" target="_blank" data-scroll="#auditorium">AUDITORIUM</a></li>						<li><a class="menu__link menu__link_f" href="#" target="_blank" data-scroll="#benefactors">SPONSORS</a></li>					</div>				</div>		</nav>		<div class="social social_f">			<a href="#" class="social__item social__item_f" target="_blank">				<svg class="social__icon social__icon_f">					<use xlink:href="#mail"></use>				</svg>			</a>			<a href="#" class="social__item social__item_f" target="_blank">				<svg class="social__icon social__icon_f">					<use xlink:href="#twitterletter"></use>				</svg>			</a>			<a href="#" class="social__item social__item_f" target="_blank">				<svg class="social__icon social__icon_f">					<use xlink:href="#facebook"></use>				</svg>			</a>		</div> <!-- ./social -->		<a href="#" class="footer__btn btn">REGISTER TODAY</a>		<div class="copyright">			<div class="copyright__text">				<p>					Copyright © 2010 - 2014 Pixeden. All Rights Reserved.				</p>			</div>		</div>	</div> <!-- ./footer__body --></footer> <!-- /footer.footer -->			</div> <!-- ./content -->		</main> <!-- /main.page -->	</div> <!-- ./wrapper -->	<!-- Подключение jQuery -->	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>	<!-- Подключение JS -->	<script src="js/script.js"></script></body></html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta name="format-detection" content="telephone=no">
+	<meta name="google" content="notranslate">
+	<link rel="stylesheet" href="css/style.min.css">
+
+	<!-- Favicon -->
+	<link rel="apple-touch-icon" sizes="180x180" href="img/Favicon/apple-touch-icon.png">
+	<link rel="icon" type="image/png" sizes="32x32" href="img/Favicon/favicon-32x32.png">
+	<link rel="icon" type="image/png" sizes="16x16" href="img/Favicon/favicon-16x16.png">
+	<link rel="manifest" href="img/Favicon/site.webmanifest">
+	<link rel="mask-icon" href="img/Favicon/safari-pinned-tab.svg" color="#5bbad5">
+	<meta name="msapplication-TileColor" content="#00aba9">
+	<meta name="theme-color" content="#ffffff">
+
+	<title>Conference</title>
+</head>
+<body>
+
+
+
+
+	<!-- Sprite -->
+	<svg style="display: none;">
+	<symbol id="twitter" viewBox="0 0 512 512">
+		<g>
+			<path d="M512,97.248c-19.04,8.352-39.328,13.888-60.48,16.576c21.76-12.992,38.368-33.408,46.176-58.016
+			c-20.288,12.096-42.688,20.64-66.56,25.408C411.872,60.704,384.416,48,354.464,48c-58.112,0-104.896,47.168-104.896,104.992
+			c0,8.32,0.704,16.32,2.432,23.936c-87.264-4.256-164.48-46.08-216.352-109.792c-9.056,15.712-14.368,33.696-14.368,53.056
+			c0,36.352,18.72,68.576,46.624,87.232c-16.864-0.32-33.408-5.216-47.424-12.928c0,0.32,0,0.736,0,1.152
+			c0,51.008,36.384,93.376,84.096,103.136c-8.544,2.336-17.856,3.456-27.52,3.456c-6.72,0-13.504-0.384-19.872-1.792
+			c13.6,41.568,52.192,72.128,98.08,73.12c-35.712,27.936-81.056,44.768-130.144,44.768c-8.608,0-16.864-0.384-25.12-1.44
+			C46.496,446.88,101.6,464,161.024,464c193.152,0,298.752-160,298.752-298.688c0-4.64-0.16-9.12-0.384-13.568
+			C480.224,136.96,497.728,118.496,512,97.248z"/>
+		</g>
+	</symbol>
+
+	<symbol id="twitterletter" viewBox="-157 -21 681 681.33182">
+		<g>
+			<path d="m327.5 510.214844c-11.882812 5.660156-34.597656 10.59375-51.53125 11.015625-51.140625 1.367187-61.066406-35.917969-61.476562-62.953125v-198.847656h128.273437v-96.714844h-127.832031v-162.714844s-92.046875 0-93.546875 0c-1.539063 0-4.222657 1.351562-4.605469 4.765625-5.472656 49.800781-28.777344 137.203125-125.679688 172.152344v82.507812h64.648438v208.695313c0 71.464844 52.707031 172.984375 191.859375 170.585937 46.949219-.804687 99.09375-20.453125 110.609375-37.417969zm0 0"/>
+		</g>
+	</symbol>
+
+	<symbol id="facebook" viewBox="0 0 24 24">
+		<g>
+			<path d="m15.997 3.985h2.191v-3.816c-.378-.052-1.678-.169-3.192-.169-3.159 0-5.323 1.987-5.323 5.639v3.361h-3.486v4.266h3.486v10.734h4.274v-10.733h3.345l.531-4.266h-3.877v-2.939c.001-1.233.333-2.077 2.051-2.077z"/>
+		</g>
+	</symbol>
+
+	<symbol id="mail" viewBox="0 0 512 512">
+		<g>
+			<g>
+				<polygon points="339.392,258.624 512,367.744 512,144.896 		"/>
+			</g>
+		</g>
+		<g>
+			<g>
+				<polygon points="0,144.896 0,367.744 172.608,258.624 		"/>
+			</g>
+		</g>
+		<g>
+			<g>
+				<path d="M480,80H32C16.032,80,3.36,91.904,0.96,107.232L256,275.264l255.04-168.032C508.64,91.904,495.968,80,480,80z"/>
+			</g>
+		</g>
+		<g>
+			<g>
+				<path d="M310.08,277.952l-45.28,29.824c-2.688,1.76-5.728,2.624-8.8,2.624c-3.072,0-6.112-0.864-8.8-2.624l-45.28-29.856
+					L1.024,404.992C3.488,420.192,16.096,432,32,432h448c15.904,0,28.512-11.808,30.976-27.008L310.08,277.952z"/>
+			</g>
+		</g>
+	</symbol>
+	
+</svg>
+
+
+
+
+	<div class="wrapper">
+		<main class="page">
+
+
+
+			<!-- Header -->
+			
+<header class="header" id="header">
+	<div class="container">
+		<div class="header__row">
+			<nav class="header__menu menu" id="menu">
+				<div class="menu__icon icon-menu" id="menuToggle">
+					<span></span>
+					<span></span>
+					<span></span>
+				</div>
+				<div class="menu__body menu__body_h">
+					<ul class="menu__list menu__list_h">
+						<li><a class="menu__link menu__link_h" href="#" target="_blank" data-scroll="#speakers">SPEAKERS</a></li>
+						<li><a class="menu__link menu__link_h" href="#" target="_blank" data-scroll="#agenda">AGENDA</a></li>
+						<li><a class="menu__link menu__link_h" href="#" target="_blank" data-scroll="#auditorium">AUDITORIUM</a></li>
+						<li><a class="menu__link menu__link_h" href="#" target="_blank" data-scroll="#benefactors">SPONSORS</a></li>
+					</ul>
+				</div>
+			</nav>
+		</div>
+	</div>
+</header>
+
+
+
+
+			<div class="content">
+
+				<!-- Intro -->
+				<div class="intro" id="intro">
+					<div class="container">
+
+						<div class="intro__row">
+
+							<div class="intro__top">
+								<h1 class="intro__title">THE CONFERENCE</h1>
+								<h2 class="intro__subtitle">MILANO • MON 30 APRIL 2014 • SALA PASTORE</h2>
+							</div>
+							<div class="intro__text">
+								<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed 
+									ullamitso venenatis sapien a scelerisque. </p>
+							</div>
+
+							<div class="social">
+
+								<a href="#" class="social__item" target="_blank">
+									<svg class="social__icon">
+										<use xlink:href="#twitterletter"></use>
+									</svg>
+								</a>
+
+								<a href="#" class="social__item" target="_blank">
+									<svg class="social__icon">
+										<use xlink:href="#facebook"></use>
+									</svg>
+								</a>
+
+							</div> <!-- ./social -->
+
+							<a href="#" class="intro__btn btn">REGISTER NOW</a>
+
+						</div> <!-- ./intro__row -->
+
+					</div> <!-- ./container -->
+				</div> <!-- /section.intro -->
+
+
+
+
+				<!-- Speakers -->
+				<section class="speakers" id="speakers">
+
+					<div class="speakers__body">
+
+						<div class="speakers__top top">
+							<div class="top__body">
+								<div class="top__icon">
+									<picture><source srcset="img/Icons/01.webp" type="image/webp"><img src="img/Icons/01.png" alt=""></picture>
+								</div>
+								<h3 class="top__title title">SPEAKERS</h3>
+								<div class="top__text">
+									<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi ultricies condimentum tristique. Sed quis urna velit. Aliquam suscipit dapibus molestie. Nam auctor, risus et
+									varius dapibus, lorem leo dapibus nulla, id elementum tellus purus vitae augue.</p>
+								</div>
+							</div>
+						</div>
+
+						<div class="speakers__row">
+
+							<!-- ====1==== -->
+							<div class="speakers__item speakers__item_b">
+								<div class="speakers__column speakers__column_b">
+									<a class="speakers__speaker" href="#" target="_blank">
+										<span class="speakers__image ibg">
+											<picture><source srcset="img/Speakers/01.webp" type="image/webp"><img src="img/Speakers/01.jpg" alt=""></picture>
+										</span>
+									</a>
+								</div>
+								<div class="speakers__column speakers__column_b">
+									<div class="speakers__content block block_b">
+										<div class="block__body block__body_b">
+											<div class="block__row">
+												<div class="block__top">
+													<h4 class="block__title">
+														<a class="block__link title" href="#" target="_blank">
+															<p>
+																PETER LONGMAN
+															</p>
+														</a>
+													</h4>
+													<div class="block__text">
+														<p>
+															Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin quis consectetur nisi, ac placerat odio. Maecenas porta orci a lorem fermentum.
+														</p>
+													</div>
+												</div>
+												<div class="block__social social social_s">
+													<a href="#" class="social__item social__item_s" target="_blank">
+														<svg class="social__icon social__icon_s">
+															<use xlink:href="#twitter"></use>
+														</svg>
+													</a>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div> <!-- ./speakers__item -->
+
+							<!-- ====2==== -->
+							<div class="speakers__item">
+								<div class="speakers__column">
+									<a class="speakers__speaker" href="#" target="_blank">
+										<span class="speakers__image ibg">
+											<picture><source srcset="img/Speakers/02.webp" type="image/webp"><img src="img/Speakers/02.jpg" alt=""></picture>
+										</span>
+									</a>
+								</div>
+								<div class="speakers__column">
+									<div class="speakers__content block">
+										<div class="block__body">
+											<div class="block__row">
+												<div class="block__top">
+													<h4 class="block__title">
+														<a class="block__link title" href="#" target="_blank">
+															<p>
+																JOAN MARTINEZ
+															</p>
+														</a>
+													</h4>
+													<div class="block__text">
+														<p>
+															Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque vitae metus ligula. Ut vitae vestibulum enim. 
+														</p>
+													</div>
+												</div>
+												<div class="block__social social social_s">
+													<a href="#" class="social__item social__item_s" target="_blank">
+														<svg class="social__icon social__icon_s">
+															<use xlink:href="#twitter"></use>
+														</svg>
+													</a>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div> <!-- ./speakers__item -->
+
+							<!-- ====3==== -->
+							<div class="speakers__item">
+								<div class="speakers__column">
+									<a class="speakers__speaker" href="#" target="_blank">
+										<span class="speakers__image ibg">
+											<picture><source srcset="img/Speakers/03.webp" type="image/webp"><img src="img/Speakers/03.jpg" alt=""></picture>
+										</span>
+									</a>
+								</div>
+								<div class="speakers__column">
+									<div class="speakers__content block">
+										<div class="block__body">
+											<div class="block__row">
+												<div class="block__top">
+													<h4 class="block__title">
+														<a class="block__link title" href="#" target="_blank">
+															<p>
+																MICHAEL DOE
+															</p>
+														</a>
+													</h4>
+													<div class="block__text">
+														<p>
+															Aenean pharetra adipiscing sem non ornare. Duis at dui turpis. Quisque in accumsan odio. 
+														</p>
+														
+													</div>
+												</div>
+												<div class="block__social social social_s">
+													<a href="#" class="social__item social__item_s" target="_blank">
+														<svg class="social__icon social__icon_s">
+															<use xlink:href="#twitter"></use>
+														</svg>
+													</a>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div> <!-- ./speakers__item -->
+
+							<!-- ====4==== -->
+							<div class="speakers__item">
+								<div class="speakers__column">
+									<a class="speakers__speaker" href="#" target="_blank">
+										<span class="speakers__image ibg">
+											<picture><source srcset="img/Speakers/04.webp" type="image/webp"><img src="img/Speakers/04.jpg" alt=""></picture>
+										</span>
+									</a>
+								</div>
+								<div class="speakers__column">
+									<div class="speakers__content block">
+										<div class="block__body">
+											<div class="block__row">
+												<div class="block__top">
+													<h4 class="block__title">
+														<a class="block__link title" href="#" target="_blank">
+															<p>
+																SAUL GOODMAN
+															</p>
+														</a>
+													</h4>
+													<div class="block__text">
+														<p>
+															Phasellus rutrum est interdum tincidunt commodo. Donec vel dignissim orci. 
+														</p>
+													</div>
+												</div>
+												<div class="block__social social social_s">
+													<a href="#" class="social__item social__item_s" target="_blank">
+														<svg class="social__icon social__icon_s">
+															<use xlink:href="#twitter"></use>
+														</svg>
+													</a>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div> <!-- ./speakers__item -->
+
+							<!-- ====5==== -->
+							<div class="speakers__item">
+								<div class="speakers__column">
+									<a class="speakers__speaker" href="#" target="_blank">
+										<span class="speakers__image ibg">
+											<picture><source srcset="img/Speakers/05.webp" type="image/webp"><img src="img/Speakers/05.jpg" alt=""></picture>
+										</span>
+									</a>
+								</div>
+								<div class="speakers__column">
+									<div class="speakers__content block">
+										<div class="block__body">
+											<div class="block__row">
+												<div class="block__top">
+													<h4 class="block__title">
+														<a class="block__link title" href="#" target="_blank">
+															<p>
+																HUGH LAURENCE
+															</p>
+														</a>
+													</h4>
+													<div class="block__text">
+														<p>
+															Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent ac magna mauris Interdum et malesuada fames ac ante.
+														</p>
+													</div>
+												</div>
+												<div class="block__social social social_s">
+													<a href="#" class="social__item social__item_s" target="_blank">
+														<svg class="social__icon social__icon_s">
+															<use xlink:href="#twitter"></use>
+														</svg>
+													</a>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+
+							</div> <!-- ./speakers__item -->
+
+						</div> <!-- ./speakers__row -->
+
+					</div> <!-- ./speakers__body -->
+
+				</section> <!-- /section.speakers -->
+
+
+
+
+				<!-- Agenda -->
+				<section class="agenda" id="agenda">
+
+					<div class="container">
+
+						<div class="agenda__top">
+							<div class="agenda__logo">
+								<picture><source srcset="img/Icons/02.webp" type="image/webp"><img src="img/Icons/02.png" alt=""></picture>
+							</div>
+							<h3 class="agenda__title title">
+								AGENDA
+							</h3>
+							<div class="agenda__subtitle subtitle">
+								Conference Schedule
+							</div>
+							<div class="agenda__label">
+								MILANO • MON 30 APRIL 2014 SALA PASTORE
+							</div>
+						</div>
+
+						<div class="agenda__row">
+
+							<ul class="agenda__list one">
+
+								<!-- ====1==== -->
+								<li class="agenda__item">
+									<div class="agenda__column">
+										<div class="agenda__time">
+											<time>8:00 AM</time>
+										</div>
+									</div>
+									<div class="agenda__column">
+										<div class="agenda__btn btn">Check In</div>
+										<div class="event">
+											<div class="event__top">
+												<div class="event__icon">
+													<picture><source srcset="img/Icons/03.webp" type="image/webp"><img src="img/Icons/03.png" alt=""></picture>
+												</div>
+												<h4 class="event__title">Check In</h4>
+											</div>
+											<div class="event__text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent ac magna mauris. Interdum et malesuada fames ac ante ipsum primis in faucibus. </div>
+										</div>
+									</div>
+								</li>
+
+								<!-- ====2==== -->
+								<li class="agenda__item">
+									<div class="agenda__column">
+										<div class="agenda__time">
+											<time>8:30 AM</time>
+										</div>
+									</div>
+									<div class="agenda__column">
+										<div class="agenda__btn btn">Breakfast / Coffee</div>
+										<div class="event">
+											<div class="event__top">
+												<div class="event__icon">
+													<picture><source srcset="img/Icons/03.webp" type="image/webp"><img src="img/Icons/03.png" alt=""></picture>
+												</div>
+												<h4 class="event__title">Breakfast / Coffee</h4>
+											</div>
+											<div class="event__text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent ac magna mauris. Interdum et malesuada fames ac ante ipsum primis in faucibus. </div>
+										</div>
+									</div>
+								</li>
+
+								<!-- ====3==== -->
+								<li class="agenda__item">
+									<div class="agenda__column">
+										<div class="agenda__time">
+											<time>9:00AM - 12:00 AM</time>
+										</div>
+									</div>
+									<div class="agenda__column">
+										<div class="agenda__btn btn">Pre-Conference Trainings</div>
+										<div class="event">
+											<div class="event__top">
+												<div class="event__icon">
+													<picture><source srcset="img/Icons/03.webp" type="image/webp"><img src="img/Icons/03.png" alt=""></picture>
+												</div>
+												<h4 class="event__title">Pre-Conference Trainings</h4>
+											</div>
+											<div class="event__text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent ac magna mauris. Interdum et malesuada fames ac ante ipsum primis in faucibus. </div>
+										</div>
+									</div>
+								</li>
+
+								<!-- ====4==== -->
+								<li class="agenda__item">
+									<div class="agenda__column">
+										<div class="agenda__time">
+											<time>12:30 PM - 1:30 PM</time>
+										</div>
+									</div>
+									<div class="agenda__column">
+										<div class="agenda__btn btn">Lunch</div>
+										<div class="event">
+											<div class="event__top">
+												<div class="event__icon">
+													<picture><source srcset="img/Icons/03.webp" type="image/webp"><img src="img/Icons/03.png" alt=""></picture>
+												</div>
+												<h4 class="event__title">Lunch</h4>
+											</div>
+											<div class="event__text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent ac magna mauris. Interdum et malesuada fames ac ante ipsum primis in faucibus. </div>
+										</div>
+									</div>
+								</li>
+
+								<!-- ====5==== -->
+								<li class="agenda__item">
+									<div class="agenda__column">
+										<div class="agenda__time">
+											<time>1:30 PM - 5:30 PM</time>
+										</div>
+									</div>
+									<div class="agenda__column">
+										<div class="agenda__btn btn">Pre-Conference Trainings</div>
+										<div class="event">
+											<div class="event__top">
+												<div class="event__icon">
+													<picture><source srcset="img/Icons/03.webp" type="image/webp"><img src="img/Icons/03.png" alt=""></picture>
+												</div>
+												<h4 class="event__title">Pre-Conference Trainings</h4>
+											</div>
+											<div class="event__text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent ac magna mauris. Interdum et malesuada fames ac ante ipsum primis in faucibus. </div>
+										</div>
+									</div>
+								</li>
+
+								<!-- ====6==== -->
+								<li class="agenda__item">
+									<div class="agenda__column">
+										<div class="agenda__time">
+											<time>5:00 PM</time>
+										</div>
+									</div>
+									<div class="agenda__column">
+										<div class="agenda__btn btn">City tour & Activities</div>
+										<div class="event">
+											<div class="event__top">
+												<div class="event__icon">
+													<picture><source srcset="img/Icons/03.webp" type="image/webp"><img src="img/Icons/03.png" alt=""></picture>
+												</div>
+												<h4 class="event__title">City tour & Activities</h4>
+											</div>
+											<div class="event__text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent ac magna mauris. Interdum et malesuada fames ac ante ipsum primis in faucibus. </div>
+										</div>
+									</div>
+								</li>
+								
+								<!-- ====7==== -->
+								<li class="agenda__item">
+									<div class="agenda__column">
+										<div class="agenda__time">
+											<time>6:00 PM - 9:00 PM</time>
+										</div>
+									</div>
+									<div class="agenda__column">
+										<div class="agenda__btn btn">The Conference talks</div>
+										<div class="event">
+											<div class="event__top">
+												<div class="event__icon">
+													<picture><source srcset="img/Icons/03.webp" type="image/webp"><img src="img/Icons/03.png" alt=""></picture>
+												</div>
+												<h4 class="event__title">The Conference talks</h4>
+											</div>
+											<div class="event__text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent ac magna mauris. Interdum et malesuada fames ac ante ipsum primis in faucibus. </div>
+										</div>
+									</div>
+								</li>
+
+								<!-- ====8==== -->
+								<li class="agenda__item">
+									<div class="agenda__column">
+										<div class="agenda__time">
+											<time>9:00 PM</time>
+										</div>
+									</div>
+									<div class="agenda__column">
+										<div class="agenda__btn btn">Welcome Dinner</div>
+										<div class="event">
+											<div class="event__top">
+												<div class="event__icon">
+													<picture><source srcset="img/Icons/03.webp" type="image/webp"><img src="img/Icons/03.png" alt=""></picture>
+												</div>
+												<h4 class="event__title">Welcome Dinner</h4>
+											</div>
+											<div class="event__text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent ac magna mauris. Interdum et malesuada fames ac ante ipsum primis in faucibus. </div>
+										</div>
+									</div>
+								</li>
+								
+								<!-- ====9==== -->
+								<li class="agenda__item">
+									<div class="agenda__column">
+										<div class="agenda__time">
+											<time>7:30 PM - 9:00 PM</time>
+										</div>
+									</div>
+									<div class="agenda__column">
+										<div class="agenda__btn btn">Sponsors Reception</div>
+										<div class="event">
+											<div class="event__top">
+												<div class="event__icon">
+													<picture><source srcset="img/Icons/03.webp" type="image/webp"><img src="img/Icons/03.png" alt=""></picture>
+												</div>
+												<h4 class="event__title">Sponsors Reception</h4>
+											</div>
+											<div class="event__text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent ac magna mauris. Interdum et malesuada fames ac ante ipsum primis in faucibus. </div>
+										</div>
+									</div>
+								</li>
+
+							</ul> <!-- /ul.agenda__list -->
+
+						</div> <!-- ./agenda__row -->
+
+					</div> <!-- ./container -->
+
+				</section> <!-- /section.agenda -->
+
+
+
+
+				<!-- Auditorium -->
+				<section class="auditorium" id="auditorium">
+
+					<div class="container">
+
+						<div class="auditorium__body">
+
+							<div class="auditorium__item item">
+
+								<div class="item__top">
+									<div class="item__logo">
+										<picture><source srcset="img/Icons/04.webp" type="image/webp"><img src="img/Icons/04.png" alt=""></picture>
+									</div>
+									<div class="item__title title">
+										AUDITORIUM
+									</div>
+									<div class="item__subtitle subtitle">
+										The Location
+									</div>
+								</div>
+
+								<div class="item__text text">
+									<div class="text__address">
+										<p>Corso Magenta, 52</p> 
+										<p>20123 Milano</p>
+									</div>
+									<div class="text__number">
+										<a href="#" target="_blank">Tel. +39 02 92881877</a>
+										<a href="#" target="_blank">Mob. +39 373 8126235</a>
+									</div>
+									<div class="text__mail">
+										<p>E-Mail :</p>
+										<a href="mailto:info@salapastore.it" target="_blank">
+											info@salapastore.it
+										</a>
+									</div>
+								</div>
+
+							</div> <!-- ./auditorium__item -->
+
+						</div> <!-- ./auditorium__body -->
+
+					</div> <!-- ./container -->
+
+				</section> <!-- /section.auditorium -->
+
+
+
+
+				<!-- Benefactors -->
+				<section class="benefactors" id="benefactors">
+
+					<div class="benefactors__body">
+
+						<div class="benefactors__top">
+							<div class="benefactors__logo">
+								<picture><source srcset="img/Icons/05.webp" type="image/webp"><img src="img/Icons/05.png" alt=""></picture>
+							</div>
+							<h3 class="benefactors__title title">
+								SPONSORS
+							</h3>
+							<div class="benefactors__subtitle subtitle">
+								The Conference Partners
+							</div>
+						</div>
+
+						<div class="benefactors__row">
+
+							<div class="benefactors__company">
+								<a class="benefactors__image" href="#" target="_blank">
+									<picture><source srcset="img/Sponsors/01.webp" type="image/webp"><img src="img/Sponsors/01.png" alt=""></picture>
+								</a>
+							</div>
+
+							<div class="benefactors__company">
+								<a class="benefactors__image" href="#" target="_blank">
+									<picture><source srcset="img/Sponsors/02.webp" type="image/webp"><img src="img/Sponsors/02.png" alt=""></picture>
+								</a>
+							</div>
+
+							<div class="benefactors__company">
+								<a class="benefactors__image" href="#" target="_blank">
+									<picture><source srcset="img/Sponsors/03.webp" type="image/webp"><img src="img/Sponsors/03.png" alt=""></picture>
+								</a>
+							</div>
+
+							<div class="benefactors__company">
+								<a class="benefactors__image" href="#" target="_blank">
+									<picture><source srcset="img/Sponsors/04.webp" type="image/webp"><img src="img/Sponsors/04.png" alt=""></picture>
+								</a>
+							</div>
+
+							<div class="benefactors__company">
+								<a class="benefactors__image" href="#" target="_blank">
+									<picture><source srcset="img/Sponsors/05.webp" type="image/webp"><img src="img/Sponsors/05.png" alt=""></picture>
+								</a>
+							</div>
+
+							<div class="benefactors__company">
+								<a class="benefactors__image" href="#" target="_blank">
+									<picture><source srcset="img/Sponsors/06.webp" type="image/webp"><img src="img/Sponsors/06.png" alt=""></picture>
+								</a>
+							</div>
+
+						</div> <!-- ./benefactors__row -->
+
+						<div class="benefactors__bottom">
+							<a href="#" class="benefactors__btn btn">BECOME A SPONSOR</a>
+						</div>
+
+					</div> <!-- ./benefactors__body -->
+
+				</section> <!-- /section.benefactors -->
+
+
+
+
+				<!-- Footer -->
+				
+<footer class="footer" id="footer">
+
+	<div class="footer__body">
+
+		<h2 class="footer__title">
+			THE CONFERENCE
+		</h2>
+
+		<nav class="footer__menu menu" id="menu">
+				<div class="menu__body menu__body_f">
+					<div class="menu__list menu__list_f">
+						<li><a class="menu__link menu__link_f" href="#" target="_blank" data-scroll="#speakers">SPEAKERS</a></li>
+						<li><a class="menu__link menu__link_f" href="#" target="_blank" data-scroll="#agenda">AGENDA</a></li>
+						<li><a class="menu__link menu__link_f" href="#" target="_blank" data-scroll="#auditorium">AUDITORIUM</a></li>
+						<li><a class="menu__link menu__link_f" href="#" target="_blank" data-scroll="#benefactors">SPONSORS</a></li>
+					</div>
+				</div>
+		</nav>
+
+		<div class="social social_f">
+
+			<a href="#" class="social__item social__item_f" target="_blank">
+				<svg class="social__icon social__icon_f">
+					<use xlink:href="#mail"></use>
+				</svg>
+			</a>
+
+			<a href="#" class="social__item social__item_f" target="_blank">
+				<svg class="social__icon social__icon_f">
+					<use xlink:href="#twitterletter"></use>
+				</svg>
+			</a>
+
+			<a href="#" class="social__item social__item_f" target="_blank">
+				<svg class="social__icon social__icon_f">
+					<use xlink:href="#facebook"></use>
+				</svg>
+			</a>
+
+		</div> <!-- ./social -->
+
+		<a href="#" class="footer__btn btn">REGISTER TODAY</a>
+
+		<div class="copyright">
+			<div class="copyright__text">
+				<p>
+					Copyright © 2010 - 2014 Pixeden. All Rights Reserved.
+				</p>
+			</div>
+		</div>
+
+	</div> <!-- ./footer__body -->
+
+</footer> <!-- /footer.footer -->
+
+			</div> <!-- ./content -->
+
+		</main> <!-- /main.page -->
+	</div> <!-- ./wrapper -->
+
+
+
+
+	<!-- Подключение jQuery -->
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+	<!-- Подключение JS -->
+	<script src="js/script.js"></script>
+</body>
+</html>
